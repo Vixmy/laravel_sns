@@ -22,7 +22,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/timeline', [App\Http\Controllers\TimeController::class, 'showTimelinePage'])->name('timeline');
 Route::post('/timeline', [App\Http\Controllers\TimeController::class, 'registerWord'])->name('timeline');
-Route::get('/mypage', [App\Http\Controllers\MyPageController::class, 'redirect']);
+Route::get('/mypage', [App\Http\Controllers\MyPageController::class, 'redirect'])->name('redirect_mypage');
 Route::middleware(['auth'])->group(function () {
     Route::get('/{name}', [App\Http\Controllers\MyPageController::class, 'index'])->name('mypage');
 });
